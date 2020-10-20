@@ -1,0 +1,5 @@
+{
+  "dsn": "mysql:host=localhost;dbname=exercice_film;charset=utf8",
+  "user": "root",
+  "pswrd": ""
+}
