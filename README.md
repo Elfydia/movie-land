@@ -8,5 +8,5 @@ This use Moviedatabase API.
 
 ## Contributors
 
-* Delfine
+* Delfine Sikora
 * Etienne
