@@ -8,13 +8,18 @@ require('src/controller/LendingController.php');
 require('src/model/CategoryModel.php');
 require('src/model/FilmModel.php');
 require('src/model/LendingModel.php');
+require('src/service/ErrorService.php');
 
 $contents = file_get_contents(__DIR__.'/config/env.json');
 $obj = json_decode($contents);
 define('ENV', $obj->env);
 
-var_dump($_SERVER);
-
+//il serait bon de déporter ces instructions dans le ErrorService
+ini_set('display_errors', 0);
+$error = new ErrorService();
+set_error_handler([$error, "logError"]);
+register_shutdown_function([$error, "fatalError"]);
+$foo= new Toto();
 
 $path = '/13-objet-projet-bibliotheque-films-cour-php';
 
