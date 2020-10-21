@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+	<loc>http://dsiko.alwaysdata.net/</loc>
+	<lastmod>2020-10-21T10:20:00+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>http://dsiko.alwaysdata.net/?page=film&amp;filed=0&amp;wish=0</loc>
+	<lastmod>2020-10-21T10:20:01+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>http://dsiko.alwaysdata.net/?page=form</loc>
+	<lastmod>2020-10-21T10:20:02+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>http://dsiko.alwaysdata.net/?page=category</loc>
+	<lastmod>2020-10-21T10:20:03+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>http://dsiko.alwaysdata.net/?page=film&amp;filed=1&amp;wish=0</loc>
+	<lastmod>2020-10-21T10:20:03+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>http://dsiko.alwaysdata.net/?page=lending</loc>
+	<lastmod>2020-10-21T10:20:04+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>http://dsiko.alwaysdata.net/?page=film&amp;filed=0&amp;wish=1</loc>
+	<lastmod>2020-10-21T10:20:04+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+</urlset>
