@@ -4,4 +4,4 @@ Disallow: /public/
 Allow: /public/img/
 Allow: /public/upload/
 
-Sitemap: http://www.example.com/sitemap.xml
+Sitemap: http://www.dsiko.alwaysdata.net/sitemap.xml
