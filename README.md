@@ -9,4 +9,4 @@ This use Moviedatabase API.
 ## Contributors
 
 * Delfine
-* Etienne
+* Serge
