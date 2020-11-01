@@ -24,34 +24,34 @@ class AddModifyFilmController{
         if(filter_imput(INPUT_GET, 'details')){
             $this->details = $this->filmModel->getDetailsFromTMDB(filter_imput(INPUT_GET, 'tmdb'));
         }
-        if(isset($_POST['movieName'])){
-            $_POST['movieName'] = str_replace(' ', '+', $_POST['movieName']);
-            $this->request = $this->filmModel->getFilmFromTMDB($_POST['movieName']);
+        if(filter_imput(INPUT_POST, 'movieName')){
+            $_POST['movieName'] = str_replace(' ', '+', filter_imput(INPUT_POST, 'movieName'));
+            $this->request = $this->filmModel->getFilmFromTMDB(filter_imput(INPUT_POST, 'movieName'));
             if($this->request === false){
                 array_push($this->msg, "<div class='notification is-warning'>Oups ! On dirait qu'un problème est survenu.</div>");
             }elseif($this->request === NULL){
                 array_push($this->msg, "<div class='notification is-warning'>Il n'y a aucun résultat pour cette recherche.</div>");
             }
         }
-        if(isset($_POST['name'])){
-            if($_POST['name'] === '' || $_POST['year'] === '' || $_POST['duration'] === '' || $_POST['category'] === ''){
+        if(filter_imput(INPUT_POST, 'name')){
+            if(filter_imput(INPUT_POST, 'name') === '' || filter_imput(INPUT_POST, 'year') === '' || filter_imput(INPUT_POST, 'duration') === '' || filter_imput(INPUT_POST, 'category') === ''){
                 $this->msg = "<div class='notification is-warning'>Tous les champs ne sont pas remplis. Merci de completer les informations</div>";
             }else{
-                if($_POST['see'] !== false){
+                if(filter_imput(INPUT_POST, 'see') !== false){
                     $_POST['see'] = '1';
                 }else{
                     $_POST['see'] = '0';
                 }
                                 
                 $this->saveFilm = $this->filmModel->saveFilm(
-                    $_POST['name'],
-                    $_POST['year'],
-                    $_POST['comment'],
-                    $_POST['duration'],
-                    $_POST['mark'],
-                    $_POST['category'],
-                    $_POST['see'],
-                    $_POST['img']
+                    filter_imput(INPUT_POST, 'name'),
+                    filter_imput(INPUT_POST, 'year'),
+                    filter_imput(INPUT_POST, 'comment'),
+                    filter_imput(INPUT_POST, 'duration'),
+                    filter_imput(INPUT_POST, 'mark'),
+                    filter_imput(INPUT_POST, 'category'),
+                    filter_imput(INPUT_POST, 'see'),
+                    filter_imput(INPUT_POST, 'img')
 
                 );
                 if($this->saveFilm === false){
