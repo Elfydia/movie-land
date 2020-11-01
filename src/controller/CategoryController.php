@@ -17,8 +17,8 @@ class CategoryController{
         $this->msg = [];
 
 
-        if(isset($_GET['modifyCat']) && isset($_POST['nameCat'])){
-            $this->modifyCategory = $this->model->modifyCategory($_POST['nameCat'], $_GET['modifyCat']);
+        if(filter_imput(INPUT_GET, 'modifyCat') && filter_imput(INPUT_POST, 'nameCat')){
+            $this->modifyCategory = $this->model->modifyCategory(filter_imput(INPUT_POST, 'nameCat'), filter_imput(INPUT_GET, 'modifyCat'));
             
             if($this->modifyCategory === false){
                 array_push($this->msg, "<div class='notification is-warning'>Oups ! On dirait qu'un problème est survenu.</div>");
@@ -27,8 +27,8 @@ class CategoryController{
             }
         }
 
-        if(!isset($_GET['modifyCat']) && isset($_POST['nameCat'])){
-            $this->addCategory = $this->model->addCategory($_POST['nameCat']);
+        if(!filter_imput(INPUT_GET, 'modifyCat') && filter_imput(INPUT_POST, 'nameCat')){
+            $this->addCategory = $this->model->addCategory(filter_imput(INPUT_POST, 'nameCat'));
             
             if($this->addCategory === false){
                 array_push($this->msg, "<div class='notification is-warning'>Oups ! On dirait qu'un problème est survenu.</div>");
@@ -37,8 +37,8 @@ class CategoryController{
             }
         }
 
-        if(isset($_GET['delete_category'])){
-            $this->deleteCategory = $this->model->deleteCategory($_GET['delete_category']);
+        if(filter_imput(INPUT_GET, 'delete_category')){
+            $this->deleteCategory = $this->model->deleteCategory(filter_imput(INPUT_GET, 'delete_category'));
             
             if($this->deleteCategory === false){
                 array_push($this->msg, "<div class='notification is-warning'>Oups ! On dirait qu'un problème est survenu.</div>");

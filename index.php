@@ -19,7 +19,7 @@ ini_set('display_errors', 0);
 $error = new ErrorService();
 set_error_handler([$error, "logError"]);
 register_shutdown_function([$error, "fatalError"]);
-$foo= new Toto();
+
 
 $path = '/13-objet-projet-bibliotheque-films-cour-php';
 

@@ -18,11 +18,11 @@ class AddModifyFilmController{
     public function manage(){
         $this->msg = [];
 
-        if(isset($_GET['return'])){
-            $_POST['movieName'] = $_GET['return'];
+        if(filter_imput(INPUT_GET, 'return')){
+            $_POST['movieName'] = filter_imput(INPUT_GET, 'return');
         }
-        if(isset($_GET['detail'])){
-            $this->details = $this->filmModel->getDetailsFromTMDB($_GET['tmdb']);
+        if(filter_imput(INPUT_GET, 'details')){
+            $this->details = $this->filmModel->getDetailsFromTMDB(filter_imput(INPUT_GET, 'tmdb'));
         }
         if(isset($_POST['movieName'])){
             $_POST['movieName'] = str_replace(' ', '+', $_POST['movieName']);
@@ -63,11 +63,11 @@ class AddModifyFilmController{
             }
         }
         
-        if(isset($_GET['modifyFilm'])){
+        if(filter_imput(INPUT_GET, 'modifyFilm')){
             $table =[];
             $order = [];
 
-            $table['movie_id'] = $_GET['modifyFilm'];
+            $table['movie_id'] = filter_imput(INPUT_GET, 'modifyFilm');
 
             $this->film = $this->filmModel->getAllFilm('movie', $table, $order, 'category', 'id_category', 'category_id');
             
